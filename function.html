@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//函数
+			function fn(){}
+			fn();   //方法运行时产生的对象叫作   活动对象    生命周期   非常短
+			//对象，类，实例
+			function Person(name){
+				this.name = name;
+				this.age  = 0;
+				this.sex  = "";
+			}
+			var p = new Person('张飞');
+			p.a1 = 100
+			console.log(p)
+			console.log(p.name)
+			console.log(p.age)
+			console.log(p.sex)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

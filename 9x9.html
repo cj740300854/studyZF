@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,p,ul{margin:0;padding:0;}
+			li{list-style: none;}
+			#box{background:#00c;padding-bottom:7px;}
+			#box p{padding-top:7px;}
+			#box p span{background:#ff0;margin-left:5px;display:inline-block;width:70px;padding:3px;font-size:18px;color:#f00;}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox = document.getElementById('box');
+				for(var i=1;i<10;i++){
+					var str = "<p>";
+					for(var j=1;j<=i;j++){
+						str += '<span>' + j + '*' + i + '=' + i*j +  '</span>'						
+					}
+					str += '</p>'
+					oBox.innerHTML += str;
+				}
+				var oTableOne = document.getElementById('tableone');
+				var oTr = oTableOne.tBodies[0].rows;
+				var oTableTwo = document.getElementById('tabletwo');
+				var oTr2 = oTableTwo.tBodies[0].rows;
+				for(var i=0;i<oTr.length;i++){
+					if(i%2){
+						oTr[i].style.background = 'red';
+					}else{
+						oTr[i].style.background = 'orange';
+					}
+				}
+				//不用模除判断
+				for(var i=0;i<oTr2.length;i+=3){	
+					oTr2[i].style.background   = 'red';
+					if(i+1>oTr2.length-1)break
+					oTr2[i+1].style.background = 'orange';
+					if(i+2>oTr2.length-1)break
+					oTr2[i+2].style.background = 'green';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		 <div id="box">
+		 	
+		 </div>
+		 <table border="1" width="600" id="tableone">
+		 	<thead>
+		 		<th>序号</th>
+		 		<th>姓名</th>
+		 		<th>性别</th>
+		 		<th>ID</th>
+		 		<th>电话</th>
+		 		<th>地址</th>
+		 	</thead>
+		 	<tbody>
+		 		<tr>
+		 			<th>one</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>two</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>three</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>four</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>five</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>six</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>seven</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>eight</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>nine</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>ten</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 	</tbody>
+		 </table>
+		 <table border="1" width="600" id="tabletwo">
+		 	<thead>
+		 		<th>序号</th>
+		 		<th>姓名</th>
+		 		<th>性别</th>
+		 		<th>ID</th>
+		 		<th>电话</th>
+		 		<th>地址</th>
+		 	</thead>
+		 	<tbody>
+		 		<tr>
+		 			<th>one</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>two</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>three</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>four</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>five</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>six</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>seven</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>eight</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>nine</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>ten</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 		<tr>
+		 			<th>eleven</th>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 			<td>&nbsp;</td>
+		 		</tr>
+		 	</tbody>
+		 </table>
+	</body>
+</html>

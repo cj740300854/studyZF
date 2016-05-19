@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul,li{margin:0;padding:0;}
+			li{list-style: none;}
+			#card{padding-top:15px;}
+			#card li{float:left;margin-left:5px;padding:3px 7px;cursor:pointer;border:1px solid #00f;background:#0a0;z-index:20;color:#f00;border-radius:4px;}
+			#card li.active{background:#ff0;color:#00f;}
+			#box{clear:both;position:relative;}
+			#box div{width:200px;height:200px;background:#f00;border:2px solid #0ff;border-radius:5px;display:none;}
+			#box div.active{display:block;}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oCard = document.getElementById('card');
+				var oCardChild = oCard.getElementsByTagName('li');
+				var oBox = document.getElementById('box');
+				var oBoxChild = oBox.getElementsByTagName('div');
+//				for(var i=0;i<oCardChild.length;i++){
+//					oCardChild[i].index = i;
+//					oCardChild[i].onclick = function(i){
+//						for(var j=0;j<oCardChild.length;j++){
+//							oCardChild[j].className = '';
+//							oBoxChild[j].className  = '';
+//						}
+//						this.className = 'active';
+//						oBoxChild[this.index].className = 'active';
+//					}
+//				}
+				for(var i=0;i<oCardChild.length;i++){
+					(function(i){
+						oCardChild[i].onclick = function(){arr(i)}
+					})(i)
+				}
+				 function arr(i){
+						for(var j=0;j<oCardChild.length;j++){
+							oCardChild[j].className = '';
+							oBoxChild[j].className  = '';
+						}
+						oCardChild[i].className = 'active';
+						oBoxChild[i].className = 'active';
+					}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="card">
+			<li class="active">选项一</li>
+			<li>选项二</li>
+			<li>选项三</li>
+			<li>选项四</li>
+			<li>选项五</li>
+		</ul>
+		<div id="box">
+			<div class="active">对应项一</div>
+			<div>对应项二</div>
+			<div>对应项三</div>
+			<div>对应项四</div>
+			<div>对应项五</div>
+		</div>
+	</body>
+</html>
