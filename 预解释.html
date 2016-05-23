@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//变量的预解释    叫作声明（declear）   在各自定义域中的预解释
+			//1.在代码运行之前，先扫描一遍有没有带var关键字的脚本，如果有的话先去在内存里给变量开辟一个空间，这会的变量没有值（），则用undefined来表示
+			//(undefined  只是一个标识，表示不存在)
+			//2.当代码运行的时候，则给数据开一个内存空间
+			//3.让变量和数据关联在一起
+			alert(m)
+			console.log(m)
+			var m = 9;
+			//function  预定义
+			//1.在代码执行之前把所有的带 function关键字的脚本扫描一遍，然后定义变量，并且同时给变量赋值
+			fn()
+			console.log(fn);
+			function fn(){alert("预定义")}
+			
+			//变量的预解释在各作用域中的预解释
+			var n = 9,s = 'abcd';
+			function fnone(){
+				alert(n);  //undefined   用的是当前定义域中的n
+				alert(s);
+				n = 7;
+				var n = 10;
+			}
+			fnone();
+			//活动对象    函数运行时创建的内存空间
+			//函数的作用域 是函数定义的位置决定的   与函数运行的位置没有关系    
+			//闭包     闭包是机制，而不是形式，不是概念    可以简单的理解为作用域就是闭包
+			//高程     192    权威指南   182
+			
+			//闭包的使用场合
+			//1.保护变量
+			//2.协调异步代码   setTimeout是异步的
+			function fn(i){alert(i)};
+			function fn1(){return function(){alert("inner")}}
+			setTimeout(fn,1000);
+			window.setTimeout(fn1,1000);   //因为没有加括号所以是执行fn1  
+			window.setTimeout(fn1(),1000);   //会弹出 inner
+			window.setTimeout(function(){fn(9)},0);
+			alert(15);
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

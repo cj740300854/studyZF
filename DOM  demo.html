@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,p{margin:0;padding:0;}
+			#box{text-align:center;}
+			#box input {width:80px;height:30px;background:#0ff;color:#f00;font:15px bold;border-radius:4px;}
+			#box input:hover {background:#ff0;color:#0f0;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p><input type="button" value="按钮1" /></p>
+			<p><input type="button" value="按钮2" /></p>
+			<p><input type="button" value="按钮3" /></p>
+			<p><input type="button" value="按钮4" /></p>
+			<p><input type="button" value="按钮5" /></p>
+			<p><input type="button" value="按钮6" /></p>
+			<p><input type="button" value="按钮7" /></p>
+			<p><input type="button" value="按钮8" /></p>
+			<p><input type="button" value="按钮9" /></p>
+			<p><input type="button" value="按钮10" /></p>
+			<p><input type="button" value="按钮11" /></p>
+			<p><input type="button" value="按钮12" /></p>
+			<p><input type="button" value="按钮13" /></p>
+			<p><input type="button" value="按钮14" /></p>
+			<p><input type="button" value="按钮15" /></p>
+			<p><input type="button" value="按钮16" /></p>
+			<p><input type="button" value="按钮17" /></p>
+			<p><input type="button" value="按钮18" /></p>
+			<p><input type="button" value="按钮19" /></p>
+			<p><input type="button" value="按钮20" /></p>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oBox = document.getElementById('box');
+	var aInput = oBox.getElementsByTagName('input');
+//	for(var i=0;i<aInput.length;i++){
+//		aInput[i].onclick = function(){
+//			oBox.insertBefore(this.parentNode,oBox.firstElementChild)
+//		}
+//	}
+	for(var i=0;i<aInput.length;i++){
+		aInput[i].onclick = function(){
+			
+		}
+	}
+</script>

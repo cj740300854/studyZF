@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>DOM  H1</h1>
+		<!--注释节点--><ul id="ul">
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+			<li>li4</li>
+			<li>li5</li>
+		</ul>文本节点
+	</body>
+</html>
+<script type="text/javascript">
+	var oUl = document.getElementById('ul');
+	var oComment = oUl.previousSibling;
+	var oText = oUl.nextSibling;
+	alert(oUl.nodeType)           //元素节点   返回   1
+	alert(oUl.nodeName)           //UL
+	alert(oUl.tagName)            //UL   元素节点tagName与nodeName的返回值相等
+	alert(oUl.nodeValue)          //nodeValue对于元素节点没有意思  但是其存在
+	alert(oComment.nodeType)      //注释节点   返回   8    
+	alert(oComment.nodeValue)     //注释节点nodeValue 返回注释内容
+	alert(oComment.nodeName)      //#comment   
+	alert(oComment.tagName)       //返回undefined
+	alert(oText.nodeType)         //文本节点    返回   3
+	alert(oText.nodeValue)        //文本节点nodeValue 返回文本节点内容
+	alert(oText.nodeName)         //#text
+	alert(oText.tagName)          //返回undefined
+	//childNodes   所有的子节点
+	//children     所有的元素字节点
+	//parentNode   唯一的父节点
+	//firstChild   第一个子节点     高版本指的是第一个子节点      低版本指的是第一个元素子节点
+	//firstElementChild    只能在高版本使用    指第一个元素子节点
+	//lastChild    最后一个子节点     高版本指的是最后一个子节点      低版本指的是最后一个元素子节点
+	//lastElementChild     只能在高版本使用    批最后一个子节点 
+	//previousSibling    哥哥节点    高版本指的是哥哥节点    低版本指的是哥哥元素节点
+	//previousElementSibling     只能用在高版本    指哥哥元素节点 
+	//nextSibling  弟弟节点     高版本批的是弟弟节点    低版本指的是弟弟元素节点
+	//nextElementSibling    只能用在高版本    指弟弟元素节点
+	
+</script>

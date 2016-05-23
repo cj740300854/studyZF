@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{margin:0;padding:0;}
+			li{list-style: none;}
+		</style>
+	</head>
+	<body>
+		<ul id="ul">
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+			<li class="l1 l2 l3">li4</li>
+			<li class="l2 l3 l4">li5</li>
+			<li class="l3 l4 l5">li6</li>
+			<li>li7</li>
+		</ul>
+		<input type="button" name="btn" id="btn" value="删除" />
+	</body>
+</html>
+
+<script type="text/javascript">
+	//appendChild  insertBefore 对于新的元素是添加 对于已有的元素是移动 
+	//removeChild  删除元素节点
+	var oUl = document.getElementById('ul');
+	var oLi = document.createElement('li');
+	var oText = document.createTextNode('这是新创建的LI');
+	oLi.appendChild(oText);
+	oUl.appendChild(oLi);
+	oLi.style.background = 'red'
+	var oLis = oUl.getElementsByTagName('li');
+	var oLi2 = document.createElement('li');
+	var oText1 = document.createTextNode('这个是insertBefore  li');
+	oLi2.appendChild(oText1);
+	oLi2.style.background = 'yellow';
+	oUl.insertBefore(oLi2,oLis[3]);
+	
+	var oBtn = document.getElementById('btn');
+	console.log(oLis.length)
+	oBtn.onclick = function(){
+		for(var i = oLis.length ; i > 0 ; i--){
+			oUl.removeChild(oLis[0]);
+		}
+	}
+	
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="ele" value="1111" />
+		<ul id="ul">
+			<li>li1</li>
+			<li id="Li2">li2</li>
+			<li id="li2">li3</li>
+			<li class="l1 l2 l3">li4</li>
+			<li class="l2 l3 l4">li5</li>
+			<li class="l3 l4 l5">li6</li>
+			<li>li7</li>
+		</ul>
+		<table border="1">
+			<tr>
+				<td><input type="checkbox" name="course" id="course1" value="HTML" /></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="course" id="course2" value="CSS" /></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="course" id="course3" value="JS" /></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="course" id="course4" value="HTML5" /></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="course" id="course5" value="CSS3" /></td>
+			</tr>
+		</table>
+	</body>
+</html>
+<script>
+	//获取元素
+	//document.getElementById()    
+	//1.一个页面中只能有一个id名    2.在IE低版本   id名不区分大小写  需要注意
+	//alert(document.getElementById('li2').innerHTML)   //2.在IE低版本   id名不区分大小写  需要注意
+	//alert(document.getElementById('ele'))             //3.在IE8以下    会将name当做id来用
+	
+	//document.getElementsByTagName();
+	//document.getElementsByName()
+	for(var i = 0;i < document.getElementsByName('course').length;i++){
+		console.log(document.getElementsByName('course')[i].value);
+	}
+	
+	
+	//document.querySelector   和jquery的一些用法一样
+	var ele1 = document.querySelector('li');
+	ele1.style.background = 'yellow';
+	var ele2 = document.querySelector('.l1');
+	ele2.style.background = "red";
+	//document.querySelectorAll   用法与querySelector 一样   返回的值不一样
+	var eles1 = document.querySelectorAll('li');
+	console.log(eles1.length)
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>
