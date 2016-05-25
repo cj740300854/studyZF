@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div">我是div</div>
+    <div style="height:30px;background: red;" id="div1"></div>
+    <div style="height:30px;background: yellow;" id="div2"></div>
+</body>
+</html>
+<script type="text/javascript">
+//    function fn(){
+//        alert(this.innerHTML);
+//    }
+//    var innerHTML = 'window'
+//    var oDiv = document.getElementById('div');
+//    var obj  = {innerHTML : 'obj' , fn : fn};
+//    obj.fn();
+//    fn();
+//    oDiv.onclick = fn;
+    //this表示谁由调用这个方法的主体来决定
+    //每一个function，都是对行为的定义
+    //每一个行为(function)的发生都有一个主体叫context(上下文)，基实就是当前调用这个行为的对象
+    window.onload = function(){  //这段代码执行时要把上段代码注释
+        function fn(){
+            alert(this.innerHTML);
+        }
+        var innerHTML = 'window'   //这个不再是全局变量
+        var oDiv = document.getElementById('div');
+        var obj  = {innerHTML : 'obj' , fn : fn};
+        obj.fn();
+        fn();   //this还是window,但是window.innerHTML不存在  所以返回undefined
+        oDiv.onclick = fn;
+    }
+    var n=99;
+    function outer(){
+        var n=0;
+        return function inner(){
+            return ++n;
+        }
+    }
+    var counter = outer();
+    document.getElementById('div1').onclick=function(){this.innerHTML=counter()};   //因为counter是全局变量 引用了inner所在的内存地址，所以inner就不能被释放掉，所以outer也就不能被释放掉，所以outer产生的私有作用域也就不能被释放掉
+    document.getElementById('div2').onclick=function(){this.innerHTML=counter()};
+</script>
