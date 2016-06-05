@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//this关键字
+//	function fn(){
+//		alert(this)
+//		console.log(this);
+//	}
+//	fn()      //this是window
+//	document.documentElement.onclick = fn;    //html
+//	var obj = {fn:fn};
+//	obj.fn();
+	//this关键字是谁，和在哪定义没有关系(在哪定义只是决定了它的作用域)，只和在哪执行有关系。定义的时候，不知道this是谁，只有在运行的时候才知道this是指谁呢！
+	
+	
+	var i = 9;
+	function fo(){
+		var i = 0;
+		return function (n){
+			return n+i++;
+		}
+	}
+	var f = fo(); 
+	var a = f(15);console.log(a);                //    15     //运行完毕后不会销毁
+	var b = fo()(15);console.log(b);             //    15     //fo的作用域运行完 立刻销毁
+	var c = fo()(20);console.log(c);             //    20     //fo的作用域运行完 立刻销毁
+	var d = f(20);console.log(d)                 //    21     //运行完毕后不会销毁
+</script>

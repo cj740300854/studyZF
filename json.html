@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>json</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//json （JavaScript Object Notation） JavaScript对象表示法,它用严格的JavaScript对象表示法来表示结构化的数据
+	//json是一种严格的js 对象 格式 ，JSON的属性名必须有双引号，如果值是字符串，也必须是双引号
+	//json只是一种数据格式 
+	//它用
+	var obj1 = {};   //这只是个对象
+	var obj2 = {width:20,height:30}  //这个不是json
+	var obj3 = {'width':20,'height':30}  //这个更不是json
+	var objthree = {'width':20,'height':30,fn:function(){},attr1:undefined,attr2:null}  //类似函数undefined这样JSON.stringify这样的方法不识别的会跳过转换
+	var obj4 = {"width":20,"height":30,"name":"chenjian"}   //这个是一个json
+	var obj5 = '{"width":20,"height":30,"name":"chenjian"}';//这个也是一个json
+	//将js对象转为json字符串
+	var str2 = JSON.stringify(obj2);
+	var str3 = JSON.stringify(obj3);
+	var strthree = JSON.stringify(objthree);
+	var str4 = JSON.stringify(obj4);
+	console.log(str2)
+	console.log(str3)
+	console.log(str4)
+	//将json格式字符串转成js对象     (如果字符串不是json格式 的，则会报错unexpect token)
+	console.log(JSON.parse(str2));
+	
+	//如果必须要将一个不规则的对象转换成json格式的字符串    则用for in  拼接    
+	var obj = {'width':20,'height':30,fn:function(){},attr1:undefined,attr2:null} 
+	var str = "";
+	for(var attr in obj ){//只适合简单的json
+		if(typeof obj[attr]=='string'){
+			str += ',"'+ attr +'":"' + obj[attr] + '"';
+		}else{
+			str += ',"'+ attr +'":' + obj[attr];
+		}
+
+	}
+	str = '{' + str.substring(1) + '}'
+	console.log(str)
+	//eval用法
+	var evalObj = eval("("+obj5+")");
+	
+	//如何正确表达一个JSON对象
+	//两种方式,都是以值的方式存在
+	var obj = {name:'rose',age:100};
+	;({name:'rose',age:100})
+	
+	//兼容写法
+	function JSONParse(str){
+		if(window.JSON){
+			return JSON.parse(str);
+		}else{
+			return eval("("+str+")");
+		}
+//		try{
+//			return JSON.parse(str);
+//		}catch(e){
+//			return eval("("+str+")");
+//		}
+	}
+</script>

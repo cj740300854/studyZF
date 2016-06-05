@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var number = 2;    //window.number=2; 
+	var obj = {
+		number : 4 ,
+		fn1 : (function(){
+			this.number *= 2;
+			number = number*2;    //这里的number  什么都不是   NaN   其实只是一个迷惑项
+			console.log("fn1 number:"+number)
+			var number = 3;       //这里的number被 预解释
+			return function (){
+				this.number *= 2;
+				number *= 3;
+				alert(number);
+			}
+		})()
+	}
+	var fn1 = obj.fn1;
+	alert(number);   
+	fn1();
+	obj.fn1();
+	alert(window.number);
+	alert(obj.number);
+	
+	//    4
+	//    9
+	//    27
+	//	  8
+	//    8
+</script>

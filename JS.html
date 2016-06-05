@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+	<body>
+	</body>
+</html>
+	<script type="text/javascript">
+			f = function(){return true;};
+			g = function(){return false;};
+			(function(){
+				//[]==false
+				//隐式转换流程   Number([].toString())  先把数组toString()  然后放到Number函数里面
+				console.log([]==![])
+				if(g()&&[]==![]){     //这里的g()函数是局部的g()函数而不是全局的g函数         最新版本的chrome条件不成立里面不进行预解释     火狐也是 
+					alert(g())
+					alert(111)
+					f = function f(){return false;};    //当一个函数做为一个值的时候   js不会对其预解释
+					function g(){return true;}          //函数的作用域是其声明的位置    这个g函数是局部作用域
+				}
+			})();
+			alert(f());
+			alert(g());
+		</script>
+	</head>
