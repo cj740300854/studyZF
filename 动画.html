@@ -7,3 +7,13 @@
 	<body>
 	</body>
 </html>
+<script type="text/javascript">
+	//得到ele元素的attr样式的值
+	function getCss(ele,attr){
+		if(window.getComputedStyle){
+			return parseFloat(getComputedStyle(ele,null)[attr]);
+		}else{
+			return parseFloat(ele.currentStyle[attr]);
+		}
+	}
+</script>
